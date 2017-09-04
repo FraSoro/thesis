@@ -82,6 +82,12 @@ The Big-DAMA project deals with Big-Data Analytics and Network Traffic Monitorin
 
 \subsection{Big Data Analysis Frameworks}
 
+Before going through various kinds of Big Data Analysis Frameworks, it could be useful to analyze different big data definitions we find in literature, which are cutting loose from the mere concept of "very large data":
+\begin{itemize}
+\item The \textit{attributive definition} characterizes big data through the "4Vs", i.e. volume, variety, velocity and value, referring to such technologies as "designed to economically extract value from very large volumes of a wide variety of data, by enabling high-velocity capture, discovery, and/or analysis" \cite{gantz2011}.
+\item The \textit{comparative definition} refers to big data as those datasets "whose size is bexond the capability of typical database software tools to capture, store, manage and analyze" \cite{MGI2011}, providing an intentionally subjective definition lacking of precise metrics, since it supposes that the concept will adapt to the advancements of technology.  
+\item The \textit{architectural definition} states that "Big data is where the data volume, acquisition velocity, or data representation limits the ability to perform effective analysis using traditional relational approaches or requires the use of significant horizontal scaling for efficient processing." \cite{NIST2012}
+\end{itemize}
 The introduction of Big Data processing led to a new era in the design and development of large-scale data processing systems \cite{stonebraker2010}. This new breed of tools and platforms are mostly dissimilar, have different requirements, and are conceived to be used in specific situations for specific needs. Each Big Data practitioner is forced to muddle through the wide range of options available, and NTMA is not an exception. A basic yet complete taxonomy of Big Data Analysis Frameworks includes traditional Database Management Systems (DBMS) and extended Data Stream Management Systems (DSMSs), noSQL systems (e.g., all the MapReduce-based systems), and Graph-oriented systems.
 Generally speaking, the distinguishing characteristics whom one should refer to for choosing the most suitable framework for his needs are stated as: data volume, structure, speed and continuity, number of data sources, scalability requirements and application distribution. 
 While the majority of the systems target the offline analysis of static data, some proposal consider the problem of analyzing data coming in the form of online streams, characterized by being continuous, rapid, time-varying and less predictable, and hence not compliant with a traditional DBMS framework not supporting continuous queries \cite{babcock2002}.  DSMSs such as Gigascope, supporting an SQL-like language \cite{cranor2003}, and Borealis, exploiting Sream Query Algebra \cite{abadi2003}, are specifically designed for monitorning applications, they support continuous online processing of data coming from heterogeneous sources and often containing incomplete, stale or intentionally omitted information, but they cannot run offline analytics over static data. The Data Stream Warehousing (DSW) paradigm provides the means to handle both types of online and offline processing requirements within a single system, loading continuous data in a streaming fashion, and warehousing them for a long time period (i.e. years or decades) \cite{golab2011}. DataCell and DataDepot are examples of this paradigm \cite{golab2009}. NoSQL systems such as e.g. MapReduce \cite{dean2008} have also rapidly evolved, supporting the analysis of unstructured data over distributed cluster architectures. Apache Hadoop \cite{white2009} and Spark \cite{zaharia2010} are very popular implementations of MapReduce systems. These are based on offline processing rather than stream processing. There has been some promising recent work on enabling real-time and incremental analytics in MapReduce-based systems, such as Spark Streaming \cite{zaharia2012}, Incoop \cite{indoop}, Muppet \cite{muppet} and SCALLA \cite{scalla}, but these remains unexploited in the NTMA domain. The offer of solutions available is overwhelming; more examples include Storm, Samza, Flink (NoSQL); Hawq, Hive, Greenplum (SQL-oriented); Giraph, GraphLab, Pregel (graph-oriented), as well as well known DBMSs commercial solutions such as Teradata, Dataupia, Vertica and Oracle Exadata (just to name a few of them). 
@@ -355,6 +361,14 @@ Apache Spark ML, http://spark.apache.org/docs/latest/api/python/pyspark.ml.html.
 \bibitem{sklearn}
 Scikitlearn Ensembke methods, http://scikit-learn.org/stable/modules/ensemble.html.
 
+\bibitem{gantz2011}
+J.~Gantz, D.~Reinsel, "Extracting value from chaos." IDC iview 1142.2011 (2011): 1-12.
+
+\bibitem{MGI2011}
+B.~Brown, et al., "Big data: the next frontier for innovation, competition, and productivity." McKinsey Global Institute (2011).
+
+\bibitem{NIST2012}
+M.~Cooper, P.~Mell, "Tackling big data." Online] http://csrc. nist. gov/groups/SMA/forum/documents/june2012presentations/f% csm_june2012_cooper_mell. pdf. 2012.
 
 \end{thebibliography}
 \end{document}
